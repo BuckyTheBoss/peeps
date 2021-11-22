@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
 {% block title %}All people{% endblock %}
 {% block content %}
-{% for person in people %}
-    <ul>
-        {% for key, value in person.items %}
-            <li>{{ key }} : {{ value }}</li>
+    <div class="row">
+        {% for person in my_people %}
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{person.name}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{person.age}}</h6>
+                    <p class="card-text">{{ person.country }}</p>
+                    <a href="{% url 'single_person_show' person.id %}" class="card-link">Card link</a>
+                </div>
+            </div>
         {% endfor %}
-    </ul>
-{% endfor %}
+    </div>
 {% endblock %}

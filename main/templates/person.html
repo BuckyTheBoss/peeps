@@ -2,12 +2,10 @@
 {% block title %}person {{ id }}{% endblock %}
 {% block content %}
 <ul>
-    {% if person %}
-        {% for key, value in person.items %}
-            <li>{{ key }} : {{ value }}</li>
-        {% endfor %}
-    {% else %}
-        <h3>No person by the id {{ id }} found</h3>
-    {% endif %}
+
+    <li>Name : {{ person.name }}</li>
+    <li>Country : {{ person.country }}</li>
+    <li>Age : {{ person.age }}</li>
+
 </ul>
 {% endblock %}
